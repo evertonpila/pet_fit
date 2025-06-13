@@ -5,7 +5,7 @@ export default defineConfig({
  
   server: {
     host: '0.0.0.0', // Isso permite acesso fora do container
-    port: 5173, // Porta padrão do Vite (ou a que você usa)
+    port: 5174, // Porta padrão do Vite (ou a que você usa)
   },
   plugins: [react()],
   test: {
