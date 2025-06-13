@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5174:5173"  # Mapeia porta 5174 (host) → 5173 (container)
+    volumes:
+      - ./frontend:/app  # Ajuste "./frontend" para o caminho do seu projeto
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true  # Necessário para HMR no Docker (Windows/WSL)
+    stdin_open: true
+    tty: true
